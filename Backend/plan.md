@@ -11,7 +11,7 @@ Flow <br/>
     > - node.js 설치
     > - express 설치
     > - npm 설치
-    > - mysql 설치
+    > - mssql 설치
 
 2. 웹서버 구축
     > - 로컬서버
@@ -20,7 +20,7 @@ Flow <br/>
 3. 데이터 전송
     > - html 페이지에 있는 제출 버튼을 누르면 Post 방식으로 서버에 데이터 전송
 
-4. mysql DB 연결
+4. mssql DB 연결
     
 5. 카드별 월 이율 계산
     > - 베스트 1 계산

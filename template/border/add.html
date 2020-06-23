@@ -1,0 +1,42 @@
+{% extends 'mainIndex.html' %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <table class="table table-striped">
+        <tr>
+            <td>제목</td>
+            <td><input size="25" type="text" name="title"></td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td><textarea cols="28" rows="5" name="context"></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="file" name="files" multiple></td>
+        </tr>
+    <!-- <div>
+        <label>작성자 : </label> -->
+        <input type="hidden" name="author" value="{{ user.username }}">
+        <!-- Anonymous + 로그인한 유저 : {{user}} -->
+        <!-- 로그인한 유저 : {{user.username}} -->
+    <!-- </div> -->
+    <!-- <div>
+        <label>작성일 : </label>
+        <input type="text" name="cdate" value="{% now 'Y-m-d H:j:s' %}">
+    </div>
+    <div>
+        <label>수정일 : </label>
+        <input type="text" name="udate" value="{% now 'Y-m-d H:j:s' %}">
+    </div> -->
+        <tr>
+            <td>조회수</td>
+            <td><input type="text" size="25" name="vcount" value="0"></td>
+        </tr>
+</table>
+<button class="btn btn-success" type="submit">저장</button>
+</form>
+{% endblock %}
+{% block menu_active %}
+    <script>
+        document.getElementById("border").className="active";
+    </script>
+{% endblock %}

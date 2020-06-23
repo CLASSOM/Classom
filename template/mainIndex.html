@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{% block title %}Index.html{% endblock %}</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<!--script type="text/javascript" href="{% static 'bootstrap/js/bootstrap.min.js' %}"></script-->
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	</head>
+	
+	{% block script %}{% endblock %}
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="{% url 'PB:A' %}">CLASSOM</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<!--<li id="home">
+							<a href="{% url 'mainIndex' %}">나만의 카드 찾기</a>
+						</li>-->
+						<li id="phone">
+							<a href="{% url 'PB:I' %}">나만의 카드 찾기</a>
+						</li>
+						<li id="border">
+							<a href="{% url 'BD:P' 1 %}">제휴 카드 보기</a>
+						</li>
+					</ul>	
+					<ul class="nav navbar-nav navbar-right">
+						{% if user.is_active %}
+						<li id="register">
+							<a href="{% url 'myInfo' %}">
+								<span class="glyphicon glyphicon-user"></span>
+								계정정보
+							</a>
+						</li>
+						<li>
+							<a href="{% url 'logout' %}">
+								<span class="glyphicon glyphicon-log-in"></span>
+								로그아웃
+							</a>
+						</li>
+						{% else %}
+						<li id='account'>
+							<a href="{% url 'createAccount' %}">
+								<span class="glyphicon glyphicon-user"></span>
+								가입
+							</a>
+						</li>
+						<li id='login'>
+							<a href="{% url 'login' %}">
+								<span class="glyphicon glyphicon-log-in"></span>
+								로그인
+							</a>
+						</li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+        </nav>
+        <div style="padding:60px">
+        {% block content %}{% endblock %}
+        </div>
+    </body>
+    {% block menu_active %}
+	<script type="text/javascript">
+		document.getElementById("home").className="active"
+    </script>
+    {% endblock %}
+</html>
+
+
+

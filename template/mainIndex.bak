@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<i class="glyphicon glyphicon-user"></i>
+메인 index 페이지 입니다.<br>
+{{ user }}<br>
+{{ user.is_active }}<br>
+<hr>
+{% if user.is_active %}
+    {{ user }} 님 환영합니다<br>
+    <button type="button" onclick="document.location.href='{% url 'logout' %}'">로그아웃</button>
+<button type="button" onclick="document.location.href='{% url 'PB:I' %}'">목록보기</button>
+<button type="button" onclick="document.location.href='{% url 'myInfo' %}'">내정보</button>
+{% else %}
+<button type="button" onclick="document.location.href='{% url 'login' %}'">로그인</button>
+<button type="button" onclick="document.location.href='{% url 'createAccount' %}'">계정등록</button>
+{% endif %}

@@ -1,0 +1,10 @@
+{% extends 'mainIndex.html' %}
+{% block content %}
+border delete 페이지 입니다.<br>
+{{ border_id }} 번 삭제 되었습니다.
+{% endblock %}
+{% block menu_active %}
+    <script>
+        document.getElementById("border").className = "active";
+    </script>
+{% endblock %}

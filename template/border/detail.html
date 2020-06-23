@@ -1,0 +1,39 @@
+{% extends 'mainIndex.html' %}
+{% block content %}
+border detail 페이지 입니다.<br>
+<div>
+    <div>
+        <label>제목 : </label>
+        <input type="text" class="form-control" value="{{ border.제목 }}" disabled>
+    </div>
+    <div>
+        <label>수정일 : </label>
+        <input type="text" class="form-control" value="{{ border.수정일 }}" disabled>
+    </div>
+    <div>
+        <label>내용 : </label>
+        <textarea class="form-control" disabled>{{ border.내용 }}</textarea>
+    </div>
+    <div>
+        <label>파일 : </label>
+    </div>
+    <div>
+        {% for file in dirList %}
+            <button type="button" class="btn btn-primary" onclick="document.location.href='{% url 'UD:D' border.id file %}'">{{ file }}</button>
+        {% endfor %}
+    </div>
+    <br>
+    <div>
+    {% if user.username == border.작성자 %}
+        <button class="btn btn-primary btn-sm" type="button" onclick="document.location.href='{% url 'BD:U' border.id %}'">수정</button>
+        <button class="btn btn-danger btn-sm" type="button" onclick="document.location.href='{% url 'BD:L' border.id %}'">삭제</button>
+        <!-- btn-default : 흰색, btn-success : 초록색, btn-info : 하늘색 btn-primary : 파란색, btn-warning : 주황색, btn-danger : 빨간-->
+    {% endif %}
+    </div>
+</div>
+{% endblock %}
+{% block menu_active %}
+    <script>
+        document.getElementById("border").className="active";
+    </script>
+{% endblock %}

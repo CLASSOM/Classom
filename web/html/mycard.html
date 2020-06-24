@@ -14,64 +14,131 @@
 </head>
 
     <br>
-    <form name="fm" method="get">
-        <p> 1. 성별과 나이대를 알려주세요</p>
-        <p><li>성별</li></p>
-        <input type="radio" name="chk_sex" value="남자"checked="true">남자
-        <input type="radio" name="chk_sex" value="여자">여자
+    <form action="send.html" method="post">
+        <table border="1" width = 850px>
+            <td>
+        <p> 1. 전월 실적을 체크해주세요</p>
+        <input type="checkbox" value="performance1" name="0" checked="true">10만원 미만
+        <input type="checkbox" value="performance2" name="1">10만원 ~ 20만원
+        <input type="checkbox" value="performance3" name="2">20만원 ~ 30만원
+        <input type="checkbox" value="performance4" name="3">30만원 ~ 40만원
+        <input type="checkbox" value="performance5" name="4">40만원 ~ 50만원
+        <input type="checkbox" value="performance6" name="5">50만원 초과
+
+    </td>
+    </table>
         <p></p>
         <br>
-        <p><li>연령</li></p>
-        <input type="radio" name="chk_age" value="이십대" checked="true">20대
-        <input type="radio" name="chk_age" value="삼십대">30대
-        <input type="radio" name="chk_age" value="사십대">40대 이상
-        <p></p>
         <br>
-        <p> 2. 어떤 종류의 카드를 원하시나요?</p>
-        <select name="job" onChange="chg(this.selectedIndex)">
-            <option value="">카드선택</option>
-            <option value="전체">전체</option>
-             s<option value="우체국">우체국</option>
-            <option value="삼성카드">삼성카드</option>
-            <option value="신한카드">신한카드</option>
-            <option value="롯데카드">롯데카드</option>
-            <option value="KB국민카드">KB국민카드</option>
-            <option value="우리카드">우리카드</option>
-            <option value="씨티카드">씨티카드</option>
-            <option value="하나카드">하나카드</option>
-            <option value="현대카드">현대카드</option>
-            <option value="NH농협카드">NH농협카드</option>
-           </select>
+        <table border="1" width = 850px>
+            <td>
+        <p> 2. 월 교통비를 체크해주세요</p>
+        <input type="checkbox" value="traffic1" name="0"checked="true">30만원 미만
+        <input type="checkbox" value="traffic2" name="1">30만원 ~ 50만원
+        <input type="checkbox" value="traffic3" name="2">50만원 ~ 100만원
+        <input type="checkbox" value="traffic4" name="3">100만원 초과
 
-           <p><li>카드 종류</li></p>
-           <input type="radio" name="chk_age" value="신용카드" checked="true">신용카드
-           <input type="radio" name="chk_age" value="체크카드">체크카드
-           <p></p>
-           <br>
+        <p> 2 - 1. 월 택시비를 체크해주세요</p>
+        <input type="checkbox" value="taxi1" name="0"checked="true">30만원 미만
+        <input type="checkbox" value="taxi2" name="1">30만원 ~ 50만원
+        <input type="checkbox" value="taxi3" name="2">50만원 ~ 100만원
+        <input type="checkbox" value="taxi4" name="3">100만원 ~ 150만원
+        <input type="checkbox" value="taxi5" name="4">150만원 이상
 
-           <p><li>3. 어떤 타입의 카드를 찾으시나요?</li></p>
-           <input type="radio" name="chk_age" value="전체" checked="true">전체
-           <input type="radio" name="chk_age" value="할인">할인
-           <input type="radio" name="chk_age" value="포인트">포인트
-           <input type="radio" name="chk_age" value="마일리지">마일리지
+        <p> 2 - 2. 월 KTX 비용을 체크해주세요</p>
+        <input type="checkbox" value="ktx1" name="0"checked="true">30만원 미만
+        <input type="checkbox" value="ktx2" name="1">30만원 ~ 50만원
+        <input type="checkbox" value="ktx3" name="2">50만원 ~ 100만원
+        <input type="checkbox" value="ktx4" name="3">100만원 초과
+    </td>
+    </table>
+        <br><br><br>
+        <table border="1" width = 850px>
+            <td>
+        <p> 3. 월 쇼핑 비용을 체크해주세요</p>
+        <input type="checkbox" value="shopping1" name="0"checked="true">30만원 미만
+        <input type="checkbox" value="shopping2" name="1">30만원 ~ 50만원
+        <input type="checkbox" value="shopping3" name="2">50만원 ~ 100만원
+        <input type="checkbox" value="shopping4" name="3">100만원 초과
+
+        <p> 3 - 1. 월 백화점 이용 비용을 체크해주세요</p>
+        <input type="checkbox" value="department1" name="0"checked="true">30만원 미만
+        <input type="checkbox" value="department2" name="1">30만원 ~ 50만원
+        <input type="checkbox" value="department3" name="2">50만원 ~ 100만원
+        <input type="checkbox" value="department4" name="3">100만원 초과
+
+        <p> 3 - 2. 월 대형마트 이용 비용을 체크해주세요</p>
+        <input type="checkbox" value="mart1" name="0"checked="true">30만원 미만
+        <input type="checkbox" value="mart2" name="1">30만원 ~ 50만원
+        <input type="checkbox" value="mart3" name="2">50만원 ~ 100만원
+        <input type="checkbox" value="mart4" name="3">100만원 초과
+    </td>
+    </table>
+    <br><br>
+    <table border="1" width = 850px>
+        <td>
+    <p> 4. 월 통신비를 체크해주세요</p>
+    <input type="checkbox" value="Communication1" name="0"checked="true">30만원 미만
+    <input type="checkbox" value="Communication2" name="1">30만원 ~ 50만원
+    <input type="checkbox" value="Communication3" name="2">50만원 ~ 100만원
+    <input type="checkbox" value="Communication4" name="3">100만원 초과
+</td>
+    </table>
+    <br><br>
+    <table border="1" width = 850px>
+        <td>
+    <p> 5. 월 자동차 관련 총 유지 비용을 체크해 주세요</p>
+    <input type="checkbox" value="car1" name="0"checked="true">30만원 미만
+    <input type="checkbox" value="car2" name="1">30만원 ~ 50만원
+    <input type="checkbox" value="car3" name="2">50만원 ~ 100만원
+    <input type="checkbox" value="car4" name="3">100만원 초과
+
+    <p> 5 - 1. 월 주유 비용을 체크해주세요</p>
+    <input type="checkbox" value="oiling1" name="0"checked="true">30만원 미만
+    <input type="checkbox" value="oiling2" name="1">30만원 ~ 50만원
+    <input type="checkbox" value="oiling3" name="2">50만원 ~ 100만원
+    <input type="checkbox" value="oiling4" name="3">100만원 초과
+
+    <p> 5 - 2. 월 정비 비용을 체크해주세요</p>
+    <input type="checkbox" value="maintenance" name="0"checked="true">30만원 미만
+    <input type="checkbox" value="maintenance" name="1">30만원 ~ 50만원
+    <input type="checkbox" value="maintenance" name="2">50만원 ~ 100만원
+    <input type="checkbox" value="maintenance" name="3">100만원 초과
+
+</td>
+    </table>
+<br><br>
+    <table border="1" width = 850px>
+        <td>
+    <p> 6. 월 외식 비용을 체크해 주세요</p>
+    <input type="checkbox" value="eat1" name="0"checked="true">30만원 미만
+    <input type="checkbox" value="eat2" name="1">30만원 ~ 50만원
+    <input type="checkbox" value="eat3" name="2">50만원 ~ 100만원
+    <input type="checkbox" value="eat4" name="3">100만원 초과
+
+    <p> 6 - 1. 월 카페 이용 비용을 체크해주세요</p>
+    <input type="checkbox" value="cafe1" name="0"checked="true">30만원 미만
+    <input type="checkbox" value="cafe2" name="1">30만원 ~ 50만원
+    <input type="checkbox" value="cafe3" name="2">50만원 ~ 100만원
+    <input type="checkbox" value="cafe4" name="3">100만원 초과
+
+    <p> 6 - 2. 월 배달  이용 비용을 체크해주세요</p>
+    <input type="checkbox" value="delivery1" name="0"checked="true">30만원 미만
+    <input type="checkbox" value="delivery2" name="1">30만원 ~ 50만원
+    <input type="checkbox" value="delivery3" name="2">50만원 ~ 100만원
+    <input type="checkbox" value="delivery4" name="3">100만원 초과
+
+    <p> 6 - 3. 월 베이커리  이용 비용을 체크해주세요</p>
+    <input type="checkbox" value="bakery1" name="0"checked="true">30만원 미만
+    <input type="checkbox" value="bakery2" name="1">30만원 ~ 50만원
+    <input type="checkbox" value="bakery3" name="2">50만원 ~ 100만원
+    <input type="checkbox" value="bakery4" name="3">100만원 초과
+
+</td>
+    </table>
            <p></p>
-           <br>
-           <p><li>4. 필요한 카드 혜택을 선택해주세요. </li></p>
-           <select name="job" onChange="chg(this.selectedIndex)">
-            <option value="">혜택선택</option>
-            <option value="모든 가맹점">모든 가맹점</option>
-             <option value="항공 마일리지">항공 마일리지</option>
-            <option value="프리미엄">프리미엄</option>
-            <option value="무실적">무실적</option>
-            <option value="주유">주유</option>
-            <option value="교통">교통</option>
-            <option value="쇼핑">쇼핑</option>
-            <option value="마트/편의점">마트/편의점</option>
-            <option value="통신">통신</option>
-            <option value="영화/문화">영화/문화</option>
-            <option value="푸드">푸드</option>
-            <option value="여행/숙박">여행/숙박</option>
-           </select>
+           <button type="submit">입력 완료</button>
+        </form>
            <style>
             @import url('https://fonts.googleapis.com/css?family=Roboto');
       
@@ -157,5 +224,8 @@
         column-width: 15em;
         background: #dadadf;
         padding: 2em 12em;
+      }
+      #table{
+          border: 1;
       }
           </style>

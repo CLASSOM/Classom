@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
 --
--- Host: localhost    Database: CardDB
+-- Host: localhost    Database: cardDB
 -- ------------------------------------------------------
 -- Server version   8.0.20
 
@@ -16,14 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `CardDB`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `CardDB` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-
-USE `CardDB`;
-
---
 -- Table structure for table `annual`
 --
 
@@ -32,7 +24,7 @@ DROP TABLE IF EXISTS `annual`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `annual` (
   `annual_id` int NOT NULL AUTO_INCREMENT,
-  `카드명` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `카드명` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `연회비` decimal(65,30) DEFAULT NULL,
   PRIMARY KEY (`annual_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -57,7 +49,7 @@ DROP TABLE IF EXISTS `conv`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `conv` (
   `Conv_id` int NOT NULL AUTO_INCREMENT,
-  `카드명` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `카드명` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `할인율` decimal(65,30) DEFAULT NULL,
   `전월실적` decimal(65,30) DEFAULT NULL,
   PRIMARY KEY (`Conv_id`)
@@ -83,7 +75,7 @@ DROP TABLE IF EXISTS `food`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `food` (
   `food_id` int NOT NULL AUTO_INCREMENT,
-  `카드명` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `카드명` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `커피` decimal(65,30) DEFAULT NULL,
   `베이커리` decimal(65,30) DEFAULT NULL,
   `패스트푸드` decimal(12,2) DEFAULT NULL,
@@ -104,6 +96,31 @@ INSERT INTO `food` VALUES (1,'신한 Deep Dream 카드',0.0140000000000000000000
 UNLOCK TABLES;
 
 --
+-- Table structure for table `links`
+--
+
+DROP TABLE IF EXISTS `links`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `links` (
+  `links_id` int NOT NULL AUTO_INCREMENT,
+  `카드명` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `링크` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`links_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `links`
+--
+
+LOCK TABLES `links` WRITE;
+/*!40000 ALTER TABLE `links` DISABLE KEYS */;
+INSERT INTO `links` VALUES (1,'신한 Deep Dream 카드','http://www.card-gorilla.com/card/detail/32'),(2,'신한 Hi-Point 카드','http://www.card-gorilla.com/card/detail/1'),(3,'신한 B.Big 카드','http://www.card-gorilla.com/card/detail/10'),(4,'신한 RPM+Platinum# 카드','http://www.card-gorilla.com/card/detail/16'),(5,'국민 탄탄대로 Miz&Mr 티타늄카드','http://www.card-gorilla.com/card/detail/150'),(6,'국민 청춘대로 톡톡카드','http://www.card-gorilla.com/card/detail/129'),(7,'국민 탄탄대로 올쇼핑카드','http://www.card-gorilla.com/card/detail/149'),(8,'국민 탄탄대로 Biz 티타늄카드','http://www.card-gorilla.com/card/detail/485'),(9,'삼성카드 taptap O','http://www.card-gorilla.com/card/detail/51'),(10,'삼성카드 & MILEAGE PLATINUM(스카이패스)','http://www.card-gorilla.com/card/detail/49'),(11,'삼성카드 4','http://www.card-gorilla.com/card/detail/47'),(12,'삼성카드 taptap S','http://www.card-gorilla.com/card/detail/52'),(13,'NH농협 NH올원 파이카드','http://www.card-gorilla.com/card/detail/181'),(14,'NH농협 NH20 해봄카드','http://www.card-gorilla.com/card/detail/184'),(15,'NH농협 TAKE(테이크)5카드','http://www.card-gorilla.com/card/detail/159'),(16,'NH농협 올바른 POINT UP 카드','http://www.card-gorilla.com/card/detail/512'),(17,'우리 DA@카드의정석','http://www.card-gorilla.com/card/detail/87'),(18,'우리 카드의정석 위비온 플러스','http://www.card-gorilla.com/card/detail/90'),(19,'우리 ONLY 나만의카드','http://www.card-gorilla.com/card/detail/83'),(20,'우리 카드의정석 POINT','http://www.card-gorilla.com/card/detail/84'),(21,'씨티 NEW 씨티 클리어','http://www.card-gorilla.com/card/detail/101'),(22,'씨티 리워드','http://www.card-gorilla.com/card/detail/96'),(23,'씨티 NEW 캐시백','http://www.card-gorilla.com/card/detail/100'),(24,'씨티 카카오뱅크 씨티카드','http://www.card-gorilla.com/card/detail/593'),(25,'기업 일상의 기쁨카드(신용)','http://www.card-gorilla.com/card/detail/266'),(26,'기업 쇼핑앤조이 카드','http://www.card-gorilla.com/card/detail/274'),(27,'기업 Olleh Super DC IBK카드','http://www.card-gorilla.com/card/detail/264'),(28,'기업 Oil & Life카드(Oil)','http://www.card-gorilla.com/card/detail/259'),(29,'현대카드ZERO(할인형)','http://www.card-gorilla.com/card/detail/410'),(30,'현대카드ZERO(포인트형)','http://www.card-gorilla.com/card/detail/420'),(31,'현대카드 DIGITAL LOVER','http://www.card-gorilla.com/card/detail/569'),(32,'현대카드ZERO MOBILE(포인트형)','http://www.card-gorilla.com/card/detail/418'),(33,'롯데 LIKIT FUN 카드','http://www.card-gorilla.com/card/detail/208'),(34,'롯데 LIKIT ALL 카드','http://www.card-gorilla.com/card/detail/210'),(35,'롯데 LIKIT ON 카드','http://www.card-gorilla.com/card/detail/209'),(36,'롯데 I\'m ACTIVE 카드','http://www.card-gorilla.com/card/detail/540'),(37,'하나 모두의 쇼핑','http://www.card-gorilla.com/card/detail/587'),(38,'하나 1Q Daily+','http://www.card-gorilla.com/card/detail/238'),(39,'하나 Smart Any 카드','http://www.card-gorilla.com/card/detail/228'),(40,'하나 Simple Life','http://www.card-gorilla.com/card/detail/236');
+/*!40000 ALTER TABLE `links` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `mart`
 --
 
@@ -112,7 +129,7 @@ DROP TABLE IF EXISTS `mart`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mart` (
   `mart_id` int NOT NULL AUTO_INCREMENT,
-  `카드명` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `카드명` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `할인율` decimal(65,30) DEFAULT NULL,
   `전월실적` decimal(65,30) DEFAULT NULL,
   PRIMARY KEY (`mart_id`)
@@ -138,7 +155,7 @@ DROP TABLE IF EXISTS `movie`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `movie` (
   `movie_id` int NOT NULL AUTO_INCREMENT,
-  `카드명` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `카드명` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `할인율` decimal(65,30) DEFAULT NULL,
   `전월실적` decimal(65,30) DEFAULT NULL,
   PRIMARY KEY (`movie_id`)
@@ -164,7 +181,7 @@ DROP TABLE IF EXISTS `phone`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `phone` (
   `phone_id` int NOT NULL AUTO_INCREMENT,
-  `카드명` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `카드명` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `SKT` decimal(65,30) DEFAULT NULL,
   `KT` decimal(65,30) DEFAULT NULL,
   `LG_U+` decimal(65,30) DEFAULT NULL,
@@ -192,7 +209,7 @@ DROP TABLE IF EXISTS `transport`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `transport` (
   `transport_id` int NOT NULL AUTO_INCREMENT,
-  `카드명` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `카드명` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `대중교통` decimal(65,30) DEFAULT NULL,
   `전월실적` decimal(65,30) DEFAULT NULL,
   PRIMARY KEY (`transport_id`)
@@ -218,4 +235,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-24  14:51:20
+-- Dump completed on 2020-06-24 16:47:57

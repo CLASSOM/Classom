@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 
 <meta charset="utf-8">
+
+<head>
+    <title>{% block title %}카드 설문조사{% endblock %}</title>
+</head>
+
+<body>
 <ul id="main-menu">
     <li><a href="mainIndex.html">CLASSOM</a>
     </li>
@@ -11,139 +17,136 @@
   
     </li>
   </ul>
-<head>
-    <title>{% block title %}카드 설문조사{% endblock %}</title>
-</head>
 
-    <br>
-    <form action="/submit" method="post">
-        <table border="1" width = 850px>
-            <td>
-        <p> 1. 전월 실적을 체크해주세요</p>
-        <input type="radio" value="performance1" name="1">10만원 미만
-        <input type="radio" value="performance2" name="1">10만원 ~ 20만원
-        <input type="radio" value="performance3" name="1">20만원 ~ 30만원
-        <input type="radio" value="performance4" name="1">30만원 ~ 40만원
-        <input type="radio" value="performance5" name="1">40만원 ~ 50만원
-        <input type="radio" value="performance6" name="1">50만원 초과
-
-    </td>
-    </table>
-        <p></p>
-        <br>
-        <br>
-        <table border="1" width = 850px>
-            <td>
-        <p> 2. 월 교통비를 체크해주세요</p>
-        <input type="radio" value="traffic1" name="2">30만원 미만
-        <input type="radio" value="traffic2" name="2">30만원 ~ 50만원
-        <input type="radio" value="traffic3" name="2">50만원 ~ 100만원
-        <input type="radio" value="traffic4" name="2">100만원 초과
-
-        <p> 2 - 1. 월 택시비를 체크해주세요</p>
-        <input type="radio" value="taxi1" name="2-1">30만원 미만
-        <input type="radio" value="taxi2" name="2-1">30만원 ~ 50만원
-        <input type="radio" value="taxi3" name="2-1">50만원 ~ 100만원
-        <input type="radio" value="taxi4" name="2-1">100만원 ~ 150만원
-        <input type="radio" value="taxi5" name="2-1">150만원 이상
-
-        <p> 2 - 2. 월 KTX 비용을 체크해주세요</p>
-        <input type="radio" value="ktx1" name="2-2">30만원 미만
-        <input type="radio" value="ktx2" name="2-2">30만원 ~ 50만원
-        <input type="radio" value="ktx3" name="2-2">50만원 ~ 100만원
-        <input type="radio" value="ktx4" name="2-2">100만원 초과
-    </td>
-    </table>
-        <br><br><br>
-        <table border="1" width = 850px>
-            <td>
-        <p> 3. 월 쇼핑 비용을 체크해주세요</p>
-        <input type="radio" value="shopping1" name="3">30만원 미만
-        <input type="radio" value="shopping2" name="3">30만원 ~ 50만원
-        <input type="radio" value="shopping3" name="3">50만원 ~ 100만원
-        <input type="radio" value="shopping4" name="3">100만원 초과
-
-        <p> 3 - 1. 월 백화점 이용 비용을 체크해주세요</p>
-        <input type="radio" value="department1" name="3-1">30만원 미만
-        <input type="radio" value="department2" name="3-1">30만원 ~ 50만원
-        <input type="radio" value="department3" name="3-1">50만원 ~ 100만원
-        <input type="radio" value="department4" name="3-1">100만원 초과
-
-        <p> 3 - 2. 월 대형마트 이용 비용을 체크해주세요</p>
-        <input type="radio" value="mart1" name="3-2">30만원 미만
-        <input type="radio" value="mart2" name="3-2">30만원 ~ 50만원
-        <input type="radio" value="mart3" name="3-2">50만원 ~ 100만원
-        <input type="radio" value="mart4" name="3-2">100만원 초과
-    </td>
-    </table>
-    <br><br>
+  <br>
+  <form action="/submit" method="post">
     <table border="1" width = 850px>
-        <td>
-    <p> 4. 월 통신비를 체크해주세요</p>
-    <input type="radio" value="Communication1" name="4">30만원 미만
-    <input type="radio" value="Communication2" name="4">30만원 ~ 50만원
-    <input type="radio" value="Communication3" name="4">50만원 ~ 100만원
-    <input type="radio" value="Communication4" name="4">100만원 초과
-</td>
-    </table>
-    <br><br>
+    <td>
+      <p>ㅤ1. 한달 소비액을 체크해주세요</p>
+      <input type="radio" value="0~30" name="total">30만원 미만ㅤ
+      <input type="radio" value="30~50" name="total">30만원 이상ㅤ
+      <input type="radio" value="50~80" name="total">50만원 이상ㅤ
+      <input type="radio" value="80~100" name="total">80만원 이상ㅤ
+      <input type="radio" value="100~150" name="total">100만원 이상ㅤ
+      <input type="radio" value="150~" name="total">150만원 이상ㅤ
+    </td>
+    </table><br>  
+        
     <table border="1" width = 850px>
-        <td>
-    <p> 5. 월 자동차 관련 총 유지 비용을 체크해 주세요</p>
-    <input type="radio" value="car1" name="5">30만원 미만
-    <input type="radio" value="car2" name="5">30만원 ~ 50만원
-    <input type="radio" value="car3" name="5">50만원 ~ 100만원
-    <input type="radio" value="car4" name="5">100만원 초과
+    <td>
+      <p>ㅤ2. 한달 교통비를 체크해주세요</p>
+      <input type="radio" value="0~10" name="transport">10만원 미만ㅤ
+      <input type="radio" value="10~20" name="transport">10만원 이상ㅤ
+      <input type="radio" value="20~30" name="transport">20만원 이상ㅤ
+      <input type="radio" value="30~40" name="transport">30만원 이상ㅤ
+      <input type="radio" value="40~50" name="transport">40만원 이상ㅤ
+      <input type="radio" value="50~" name="transport">50만원 이상ㅤ
+    </td>
+    </table><br>
 
-    <p> 5 - 1. 월 주유 비용을 체크해주세요</p>
-    <input type="radio" value="oiling1" name="5-1">30만원 미만
-    <input type="radio" value="oiling2" name="5-1">30만원 ~ 50만원
-    <input type="radio" value="oiling3" name="5-1">50만원 ~ 100만원
-    <input type="radio" value="oiling4" name="5-1">100만원 초과
-
-    <p> 5 - 2. 월 정비 비용을 체크해주세요</p>
-    <input type="radio" value="maintenance" name="5-2">30만원 미만
-    <input type="radio" value="maintenance" name="5-2">30만원 ~ 50만원
-    <input type="radio" value="maintenance" name="5-2">50만원 ~ 100만원
-    <input type="radio" value="maintenance" name="5-2">100만원 초과
-
-</td>
-    </table>
-<br><br>
+        
     <table border="1" width = 850px>
-        <td>
-    <p> 6. 월 외식 비용을 체크해 주세요</p>
-    <input type="radio" value="eat1" name="6">30만원 미만
-    <input type="radio" value="eat2" name="6">30만원 ~ 50만원
-    <input type="radio" value="eat3" name="6">50만원 ~ 100만원
-    <input type="radio" value="eat4" name="6">100만원 초과
+    <td>
+      <p>ㅤ3. 월 대형마트 이용 비용을 체크해주세요</p>
+      <input type="radio" value="0~10" name="mart">10만원 미만
+      <input type="radio" value="10~20" name="mart">10만원 이상
+      <input type="radio" value="20~30" name="mart">20만원 이상
+      <input type="radio" value="30~40" name="mart">30만원 이상
+      <input type="radio" value="40~50" name="mart">40만원 이상
+      <input type="radio" value="50~" name="mart">50만원 이상
+    </td>
+    </table><br>
 
-    <p> 6 - 1. 월 카페 이용 비용을 체크해주세요</p>
-    <input type="radio" value="cafe1" name="6-1">30만원 미만
-    <input type="radio" value="cafe2" name="6-1">30만원 ~ 50만원
-    <input type="radio" value="cafe3" name="6-1">50만원 ~ 100만원
-    <input type="radio" value="cafe4" name="6-1">100만원 초과
+        
+    <table border="1" width = 850px>
+    <td>
+      <p>ㅤ4. 사용 중인 통신사를 체크해주세요</p>
+      <input type="radio" value="LG U+" name="ph_cate">LG U+
+      <input type="radio" value="SKT" name="ph_cate">SKT
+      <input type="radio" value="KT" name="ph_cate">KT
+      <input type="radio" value="nope" name="ph_cate">해당없음
+    </td>
+    </table><br>
 
-    <p> 6 - 2. 월 배달  이용 비용을 체크해주세요</p>
-    <input type="radio" value="delivery1" name="6-2">30만원 미만
-    <input type="radio" value="delivery2" name="6-2">30만원 ~ 50만원
-    <input type="radio" value="delivery3" name="6-2">50만원 ~ 100만원
-    <input type="radio" value="delivery4" name="6-2">100만원 초과
+    
+    <table border="1" width=850px>
+    <td>
+      <p>ㅤ5. 월 통신비를 체크해주세요</p>
+      <input type="radio" value="0~10" name="ph">10만원 미만
+      <input type="radio" value="10~20" name="ph">10만원 이상 
+      <input type="radio" value="20~30" name="ph">20만원 이상 
+      <input type="radio" value="30~40" name="ph">30만원 이상
+      <input type="radio" value="40~50" name="ph">40만원 이상
+      <input type="radio" value="50~" name="ph">50만원 이상
+    </td>
+    </table><br>
 
-    <p> 6 - 3. 월 베이커리  이용 비용을 체크해주세요</p>
-    <input type="radio" value="bakery1" name="6-3">30만원 미만
-    <input type="radio" value="bakery2" name="6-3">30만원 ~ 50만원
-    <input type="radio" value="bakery3" name="6-3">50만원 ~ 100만원
-    <input type="radio" value="bakery4" name="6-3">100만원 초과
+    <table border="1" width = 850px>
+    <td>
+    <p>ㅤ6. 월 카페 이용 비용을 체크해주세요</p>
+      <input type="radio" value="0~10" name="cafe">10만원 미만
+      <input type="radio" value="10~20" name="cafe">10만원 이상
+      <input type="radio" value="20~30" name="cafe">20만원 이상
+      <input type="radio" value="30~40" name="cafe">30만원 이상
+      <input type="radio" value="40~50" name="cafe">40만원 이상
+      <input type="radio" value="50~" name="cafe">50만원 이상
+    </td>
+    </table><br>
 
-</td>
-    </table>
-           <p></p>
-           <br/>
-           <button type="submit">입력 완료</button>
-        </form>
-           <style>
-            @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    <table border="1" width=850px>
+      <td>
+        <p>ㅤ7. 월 배달음식에 쓰는 비용을 체크해주세요</p>
+        <input type="radio" value="0~10" name="delivery">10만원 미만
+        <input type="radio" value="10~20" name="delivery">10만원 이상
+        <input type="radio" value="20~30" name="delivery">20만원 이상
+        <input type="radio" value="30~40" name="delivery">30만원 이상
+        <input type="radio" value="40~50" name="delivery">40만원 이상
+        <input type="radio" value="50~" name="delivery">50만원 이상
+      </td>
+    </table><br>
+
+    <table border="1" width=850px>
+      <td>
+        <p>ㅤ8. 월 베이커리 매장에서 쓰는 비용을 체크해주세요</p>
+        <input type="radio" value="0~10" name="bakery">10만원 미만
+        <input type="radio" value="10~20" name="bakery">10만원 이상
+        <input type="radio" value="20~30" name="bakery">20만원 이상
+        <input type="radio" value="30~40" name="bakery">30만원 이상
+        <input type="radio" value="40~50" name="bakery">40만원 이상
+        <input type="radio" value="50~" name="bakery">50만원 이상
+      </td>
+    </table><br>
+
+    <table border="1" width=850px>
+      <td>
+        <p>ㅤ9. 월 편의점에서 쓰는 비용을 체크해주세요</p>
+        <input type="radio" value="0~10" name="conv">10만원 미만
+        <input type="radio" value="10~20" name="conv">10만원 이상
+        <input type="radio" value="20~30" name="conv">20만원 이상
+        <input type="radio" value="30~40" name="conv">30만원 이상
+        <input type="radio" value="40~50" name="conv">40만원 이상
+        <input type="radio" value="50~" name="conv">50만원 이상
+      </td>
+    </table><br>
+    
+    <table border="1" width=850px>
+      <td>
+        <p>ㅤ10. 한달에 영화관에 몇 번 가는지 체크해주세요</p>
+        <input type="radio" value="0" name="movie">가지 않는다
+        <input type="radio" value="1" name="movie">1번
+        <input type="radio" value="2" name="movie">2번
+        <input type="radio" value="3~" name="movie">3번 이상 
+      </td>
+    </table><br>
+
+    <center><button type="submit"> 제출 </button></center>
+    <p>ㅤ</p>
+  </form>
+</body>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
       
       /*body 초기화*/
       body {
@@ -156,7 +159,7 @@
         align-items: center;
         overflow-x: hidden;  
       }
-      
+
       h1 {
         margin: 2em 0 1.5em 0;
       }

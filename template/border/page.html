@@ -42,28 +42,144 @@
     <script type="text/javascript">
         document.getElementById("border").className="active";
     </script>  -->
-    <header>
-        <div class="overlay"></div>
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-          <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
-        </video>
-        <div class="container h-100">
-          <div class="d-flex h-100 text-center align-items-center">
-            <div class="w-100 text-white">
-              <h1 class="display-3">              <p> 환영합니다</h1>
-            </div>
-          </div>
-        </div>
-      </header>
-      
-      <section class="my-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 mx-auto">
-              <p class="mb-0">
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <h1></h1>
+    <nav role="navigation">
+      <ul id="main-menu">
+        <li><a href="#">삼성</a>
+        <ul id="sub-menu">
+          <li><a href="#" aria-label="subemnu">삼성</a></li>
+          <li><a href="#" aria-label="subemnu">신한</a></li>
+          <li><a href="#" aria-label="subemnu">롯데</a></li>
+          <li><a href="#" aria-label="subemnu">KB</a></li>
+        </ul></li>
+        <li><a href="#">신한</a>
+          <ul id="sub-menu">
+            <li><a href="#" aria-label="subemnu">삼성</a></li>
+            <li><a href="#" aria-label="subemnu">신한</a></li>
+            <li><a href="#" aria-label="subemnu">롯데</a></li>
+            <li><a href="#" aria-label="subemnu">KB</a></li>
+          </ul>
+        </li>
+        <li><a href="#">롯데</a>
+          <ul id="sub-menu">
+            <li><a href="#" aria-label="subemnu">삼성</a></li>
+            <li><a href="#" aria-label="subemnu">신한</a></li>
+            <li><a href="#" aria-label="subemnu">롯데</a></li>
+            <li><a href="#" aria-label="subemnu">KB</a></li>
+          </ul>
+        </li>
+        <li><a href="#">KB</a>
+          <ul id="sub-menu">
+            <li><a href="#" aria-label="subemnu">삼성</a></li>
+            <li><a href="#" aria-label="subemnu">신한</a></li>
+            <li><a href="#" aria-label="subemnu">롯데</a></li>
+            <li><a href="#" aria-label="subemnu">KB</a></li>
+          </ul>
+        </li>
+        <li><a href="#">우리</a>
+        <ul id="sub-menu">
+          <li><a href="#" aria-label="subemnu">삼성</a></li>
+          <li><a href="#" aria-label="subemnu">신한</a></li>
+          <li><a href="#" aria-label="subemnu">롯데</a></li>
+          <li><a href="#" aria-label="subemnu">KB</a></li>
+        </ul></li>
+        <li><a href="#">씨티</a>
+        <ul id="sub-menu">
+          <li><a href="#" aria-label="subemnu">삼성</a></li>
+          <li><a href="#" aria-label="subemnu">신한</a></li>
+          <li><a href="#" aria-label="subemnu">롯데</a></li>
+          <li><a href="#" aria-label="subemnu">KB</a></li>
+        </ul></li>
+      </ul>
+    </nav>
+    <section>
+      <img src="image03.png">
+    </section>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/*body 초기화*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", serif;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;  
+}
+
+h1 {
+  margin: 2em 0 1.5em 0;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#main-menu > li {
+  float: left;
+  position: relative;
+  background: #051937
+}
+
+#main-menu > li > a {
+  font-size: 1.5rem;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  display: block;
+  padding: 14px 36px;
+  border-right: 1px solid rgba(0,0,0,0.15);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+#main-menu > li:nth-child(1) > a {
+  border-left: 1px solid rgba(0,0,0,0.15);
+}
+
+#sub-menu {
+  position: absolute;
+  background: #182952;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.15s ease-in;
+}
+
+#sub-menu > li {
+  padding: 16px 28px;
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+#sub-menu > li >  a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+
+#main-menu > li:hover #sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+#sub-menu > li >  a:hover {
+ text-decoration: underline;
+}
+
+section {
+  column-width: 15em;
+  background: #dadadf;
+  padding: 2em 12em;
+}
+    </style>
 {% endblock %}

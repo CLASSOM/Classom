@@ -1,7 +1,8 @@
 var http = require('http');
 var fs = require('fs');
 var qs = require('querystring');
-
+var db = require('./db.js');
+const find_best = require('./db.js');
 
 var app = http.createServer(function (request, response){
 
@@ -25,7 +26,7 @@ var app = http.createServer(function (request, response){
         response.end(fs.readFileSync(__dirname + url));
     }
 
-    else if(request.url === '/send'){ // test code
+    else if(request.url === '/submit'){ // test code
         var body = '';
 
         request.on('data',function(data){
@@ -34,8 +35,17 @@ var app = http.createServer(function (request, response){
         
         request.on('end',function(){
             var post = qs.parse(body);
+
+            if(Object.keys(post).length != 10){
+                response.writeHead(404);
+                response.end('Please check all the items.');
+                return;
+            }
+            
+            find_best(post);
+
             response.writeHead(200);
-            response.end(post);
+            response.end(post['total']);
         });
         
     }

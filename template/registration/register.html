@@ -1,0 +1,47 @@
+{% extends 'mainIndex.html' %}
+{% block content %}
+<head><title>{% block title %}회원가입{% endblock %}</title></head>
+<h3>계정등록</h3>
+<script>
+    function pwchk(){
+        pw1 = document.getElementById("pw1").value;
+        pw2 = document.getElementById("pw2").value;
+        if(pw1 == pw2){
+            document.getElementById("lbl_pw2").innerHTML="암호 일치!!";
+        } else {
+            document.getElementById("lbl_pw2").innerHTML="암호 불일치!!";
+            document.getElementById("pw1").value = "";
+            document.getElementById("pw2").value = "";
+        }
+    }
+</script>
+<form action="{% url 'createAccount' %}" method="POST">
+    {% csrf_token %}
+    <div class="form-group input-group">
+        <input type="text" name="username" placeholder="아이디 입력">
+    </div>
+    <div class="form-group input-group">
+        <input type="password" id="pw1" name="password" placeholder="암호 입력">
+    </div>
+    <div class="form-group input-group">
+        <input type="password" id="pw2" onchange="pwchk()" placeholder="암호 확인">
+        <label id='lbl_pw2'></label>
+    </div>
+    <div class="form-group input-group">
+        <input type="text" name="first_name" placeholder="이름 입력">
+    </div>
+    <div class="form-group input-group">
+        <input type="text" name="last_name" placeholder="성 입력">
+    </div>
+    <div class="form-group input-group">
+        <input type="email" name="email" placeholder="이메일 입력">
+    </div>
+    <input type="submit" value="계정등록">
+    <input type="reset" value="취소">
+</form>
+{% endblock %}
+{% block menu_active %}
+<script type="text/javascript">
+    document.getElementById("account").className="active"
+</script>
+{% endblock %}

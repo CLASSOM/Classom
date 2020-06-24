@@ -1,0 +1,6 @@
+<form method="POST">
+    {% csrf_token %}
+{{ user }} 님 탈퇴 하시겠습니까?
+<button type="submit">탈퇴</button>
+<button type="button" onclick="document.location.href='{% url 'mainIndex' %}'">취소</button>
+</form>

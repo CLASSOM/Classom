@@ -1,0 +1,43 @@
+{% extends 'mainIndex.html' %} 
+{% block content %}
+<html>
+<table border="1" align="center">
+    <tr>
+        <td align="center" width='100'><b>아이디</b></th>
+        <td align="center" width='200'>{{phonebook.id}}</td>
+    </tr>
+    <tr>
+        <td align="center" width='100'><b>이름</b></th>
+        <td align="center">{{phonebook.이름}}</td>
+    </tr>
+    <tr>
+        <td align="center" width='100'><b>전화번호</b></th>
+        <td align="center">{{phonebook.전화번호}}</td>
+    </tr>
+    <tr>
+        <td align="center" width='100'><b>주소</b></th>
+        <td align="center">{{phonebook.주소}}</td>
+    </tr>
+    <tr>
+        <td align="center" width='100'><b>이메일</b></th>
+        <td align="center">{{phonebook.이메일}}</td>
+    </tr>
+    <tr>
+        <td align="center" width='100'><b>생년월일</b></th>
+        <td align="center">{{phonebook.생년월일}}</td>
+    </tr>
+    <tr>
+        <td align="center" width='100'><b>작성자</b></th>
+        <td align="center">{{phonebook.작성자}}</td>
+    </tr>
+</table>
+<br><br>
+<div align="center">
+<button type="button" onclick="document.location.href='{% url 'PB:I' %}'">메인</button>
+{% if user.is_active %}
+<button type="button" onclick="document.location.href='{% url 'PB:U' phonebook.id %}'">수정</button>
+<button type="button" onclick="document.location.href='{% url 'PB:L' phonebook.id %}'">삭제</button>
+{% endif %}
+</div>
+</html>
+{% endblock %}

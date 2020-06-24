@@ -1,0 +1,161 @@
+<meta charset="utf-8">
+<ul id="main-menu">
+    <li><a href="mainIndex.html">CLASSOM</a>
+    </li>
+    <li><a href="mycard.html">나만의 카드 찾기</a>
+  
+    </li>
+    <li><a href="samsung.html">제휴 카드 보기</a>
+  
+    </li>
+  </ul>
+<head>
+    <title>{% block title %}카드 설문조사{% endblock %}</title>
+</head>
+
+    <br>
+    <form name="fm" method="get">
+        <p> 1. 성별과 나이대를 알려주세요</p>
+        <p><li>성별</li></p>
+        <input type="radio" name="chk_sex" value="남자"checked="true">남자
+        <input type="radio" name="chk_sex" value="여자">여자
+        <p></p>
+        <br>
+        <p><li>연령</li></p>
+        <input type="radio" name="chk_age" value="이십대" checked="true">20대
+        <input type="radio" name="chk_age" value="삼십대">30대
+        <input type="radio" name="chk_age" value="사십대">40대 이상
+        <p></p>
+        <br>
+        <p> 2. 어떤 종류의 카드를 원하시나요?</p>
+        <select name="job" onChange="chg(this.selectedIndex)">
+            <option value="">카드선택</option>
+            <option value="전체">전체</option>
+             s<option value="우체국">우체국</option>
+            <option value="삼성카드">삼성카드</option>
+            <option value="신한카드">신한카드</option>
+            <option value="롯데카드">롯데카드</option>
+            <option value="KB국민카드">KB국민카드</option>
+            <option value="우리카드">우리카드</option>
+            <option value="씨티카드">씨티카드</option>
+            <option value="하나카드">하나카드</option>
+            <option value="현대카드">현대카드</option>
+            <option value="NH농협카드">NH농협카드</option>
+           </select>
+
+           <p><li>카드 종류</li></p>
+           <input type="radio" name="chk_age" value="신용카드" checked="true">신용카드
+           <input type="radio" name="chk_age" value="체크카드">체크카드
+           <p></p>
+           <br>
+
+           <p><li>3. 어떤 타입의 카드를 찾으시나요?</li></p>
+           <input type="radio" name="chk_age" value="전체" checked="true">전체
+           <input type="radio" name="chk_age" value="할인">할인
+           <input type="radio" name="chk_age" value="포인트">포인트
+           <input type="radio" name="chk_age" value="마일리지">마일리지
+           <p></p>
+           <br>
+           <p><li>4. 필요한 카드 혜택을 선택해주세요. </li></p>
+           <select name="job" onChange="chg(this.selectedIndex)">
+            <option value="">혜택선택</option>
+            <option value="모든 가맹점">모든 가맹점</option>
+             <option value="항공 마일리지">항공 마일리지</option>
+            <option value="프리미엄">프리미엄</option>
+            <option value="무실적">무실적</option>
+            <option value="주유">주유</option>
+            <option value="교통">교통</option>
+            <option value="쇼핑">쇼핑</option>
+            <option value="마트/편의점">마트/편의점</option>
+            <option value="통신">통신</option>
+            <option value="영화/문화">영화/문화</option>
+            <option value="푸드">푸드</option>
+            <option value="여행/숙박">여행/숙박</option>
+           </select>
+           <style>
+            @import url('https://fonts.googleapis.com/css?family=Roboto');
+      
+      /*body 초기화*/
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", serif;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;  
+      }
+      
+      h1 {
+        margin: 2em 0 1.5em 0;
+      }
+      
+      nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+      
+      ul, li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      
+      #main-menu > li {
+        float: left;
+        position: relative;
+        background: #051937
+      }
+      
+      #main-menu > li > a {
+        font-size: 1.5rem;
+        color: rgba(255,255,255,0.85);
+        text-align: center;
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        display: block;
+        padding: 14px 36px;
+        border-right: 1px solid rgba(0,0,0,0.15);
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+      }
+      
+      #main-menu > li:nth-child(1) > a {
+        border-left: 1px solid rgba(0,0,0,0.15);
+      }
+      
+      #sub-menu {
+        position: absolute;
+        background: #182952;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.15s ease-in;
+      }
+      
+      #sub-menu > li {
+        padding: 16px 28px;
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+      }
+      
+      #sub-menu > li >  a {
+        color: rgba(255,255,255,0.6);
+        text-decoration: none;
+      }
+      
+      #main-menu > li:hover #sub-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      #sub-menu > li >  a:hover {
+       text-decoration: underline;
+      }
+      
+      section {
+        column-width: 15em;
+        background: #dadadf;
+        padding: 2em 12em;
+      }
+          </style>

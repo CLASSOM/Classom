@@ -1,0 +1,14 @@
+#head {
+	position: relative;
+	height: 50px;
+	background: #dedbdf;
+}
+#head ul {
+	position: absolute;
+	bottom: 0;
+	left: 100px;
+}
+#head li {
+	float: left;
+	width: 200px;
+}

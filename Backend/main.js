@@ -42,10 +42,10 @@ var app = http.createServer(function (request, response){
                 return;
             }
             
-            find_best(post);
-
-            response.writeHead(200);
-            response.end(post['total']);
+            find_best(post, function(ans){
+                response.writeHead(200);
+                response.end(ans);
+            });            
         });
         
     }

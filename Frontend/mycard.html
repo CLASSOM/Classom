@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+<head>
+    <title>{% block title %}카드 설문조사{% endblock %}</title>
+</head>
+
+<body>
+<ul id="main-menu">
+    <li><a href="mainIndex.html">CLASSOM</a>
+    </li>
+    <li><a href="mycard.html">나만의 카드 찾기</a>
+    </li>
+  </ul>
+
+  <br>
+  <form action="/submit" method="post">
+    <table border="1" width = 850px>
+    <td>
+      <p>ㅤ1. 한달 소비액을 체크해주세요</p>
+      <input type="radio" value="150000" name="total">30만원 미만ㅤ
+      <input type="radio" value="450000" name="total">30만원 이상ㅤ
+      <input type="radio" value="650000" name="total">50만원 이상ㅤ
+      <input type="radio" value="900000" name="total">80만원 이상ㅤ
+      <input type="radio" value="1250000" name="total">100만원 이상ㅤ
+      <input type="radio" value="1500000" name="total">150만원 이상ㅤ
+    </td>
+    </table><br>  
+        
+    <table border="1" width = 850px>
+    <td>
+      <p>ㅤ2. 한달 교통비를 체크해주세요</p>
+      <input type="radio" value="50000" name="transport">10만원 미만ㅤ
+      <input type="radio" value="150000" name="transport">10만원 이상ㅤ
+      <input type="radio" value="250000" name="transport">20만원 이상ㅤ
+      <input type="radio" value="350000" name="transport">30만원 이상ㅤ
+      <input type="radio" value="450000" name="transport">40만원 이상ㅤ
+      <input type="radio" value="550000" name="transport">50만원 이상ㅤ
+    </td>
+    </table><br>
+
+        
+    <table border="1" width = 850px>
+    <td>
+      <p>ㅤ3. 한달에 대형마트에서 쓰는 비용을 체크해주세요</p>
+      <input type="radio" value="50000" name="mart">10만원 미만
+      <input type="radio" value="150000" name="mart">10만원 이상
+      <input type="radio" value="250000" name="mart">20만원 이상
+      <input type="radio" value="350000" name="mart">30만원 이상
+      <input type="radio" value="450000" name="mart">40만원 이상
+      <input type="radio" value="550000" name="mart">50만원 이상
+    </td>
+    </table><br>
+
+        
+    <table border="1" width = 850px>
+    <td>
+      <p>ㅤ4. 사용 중인 통신사를 체크해주세요</p>
+      <input type="radio" value="LG U+" name="ph_cate">LG U+
+      <input type="radio" value="SKT" name="ph_cate">SKT
+      <input type="radio" value="KT" name="ph_cate">KT
+      <input type="radio" value="nope" name="ph_cate">해당없음
+    </td>
+    </table><br>
+
+    
+    <table border="1" width=850px>
+    <td>
+      <p>ㅤ5. 월 통신비를 체크해주세요</p>
+      <input type="radio" value="50000" name="ph">10만원 미만
+      <input type="radio" value="150000" name="ph">10만원 이상 
+      <input type="radio" value="250000" name="ph">20만원 이상 
+      <input type="radio" value="350000" name="ph">30만원 이상
+      <input type="radio" value="450000" name="ph">40만원 이상
+      <input type="radio" value="550000" name="ph">50만원 이상
+    </td>
+    </table><br>
+
+    <table border="1" width = 850px>
+    <td>
+    <p>ㅤ6. 한달에 카페에서 쓰는 비용을 체크해주세요</p>
+      <input type="radio" value="50000" name="cafe">10만원 미만
+      <input type="radio" value="150000" name="cafe">10만원 이상
+      <input type="radio" value="250000" name="cafe">20만원 이상
+      <input type="radio" value="350000" name="cafe">30만원 이상
+      <input type="radio" value="450000" name="cafe">40만원 이상
+      <input type="radio" value="550000" name="cafe">50만원 이상
+    </td>
+    </table><br>
+
+
+    <table border="1" width=850px>
+      <td>
+        <p>ㅤ7. 한달에 배달음식에 쓰는 비용을 체크해주세요</p>
+        <input type="radio" value="50000" name="delivery">10만원 미만
+        <input type="radio" value="150000" name="delivery">10만원 이상
+        <input type="radio" value="250000" name="delivery">20만원 이상
+        <input type="radio" value="350000" name="delivery">30만원 이상
+        <input type="radio" value="450000" name="delivery">40만원 이상
+        <input type="radio" value="550000" name="delivery">50만원 이상
+      </td>
+    </table><br>
+
+    <table border="1" width=850px>
+      <td>
+        <p>ㅤ8. 한달에 베이커리 매장에서 쓰는 비용을 체크해주세요</p>
+        <input type="radio" value="50000" name="bakery">10만원 미만
+        <input type="radio" value="150000" name="bakery">10만원 이상
+        <input type="radio" value="250000" name="bakery">20만원 이상
+        <input type="radio" value="350000" name="bakery">30만원 이상
+        <input type="radio" value="450000" name="bakery">40만원 이상
+        <input type="radio" value="550000" name="bakery">50만원 이상
+      </td>
+    </table><br>
+
+    <table border="1" width=850px>
+      <td>
+        <p>ㅤ9. 한달에 편의점에서 쓰는 비용을 체크해주세요</p>
+        <input type="radio" value="50000" name="conv">10만원 미만
+        <input type="radio" value="150000" name="conv">10만원 이상
+        <input type="radio" value="250000" name="conv">20만원 이상
+        <input type="radio" value="350000" name="conv">30만원 이상
+        <input type="radio" value="450000" name="conv">40만원 이상
+        <input type="radio" value="550000" name="conv">50만원 이상
+      </td>
+    </table><br>
+    
+    <table border="1" width=850px>
+      <td>
+        <p>ㅤ10. 한달에 영화관에 몇 번 가는지 체크해주세요</p>
+        <input type="radio" value="0" name="movie">가지 않는다
+        <input type="radio" value="1" name="movie">1번
+        <input type="radio" value="2" name="movie">2번
+        <input type="radio" value="3" name="movie">3번 이상 
+      </td>
+    </table><br>
+
+    <center><button type="submit"> 제출 </button></center>
+    <p>ㅤ</p>
+  </form>
+</body>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+      
+      /*body 초기화*/
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", serif;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;  
+      }
+
+      h1 {
+        margin: 2em 0 1.5em 0;
+      }
+      
+      nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+      
+      ul, li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      
+      #main-menu > li {
+        float: left;
+        position: relative;
+        background: #051937
+      }
+      
+      #main-menu > li > a {
+        font-size: 1.5rem;
+        color: rgba(255,255,255,0.85);
+        text-align: center;
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        display: block;
+        padding: 14px 36px;
+        border-right: 1px solid rgba(0,0,0,0.15);
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+      }
+      
+      #main-menu > li:nth-child(1) > a {
+        border-left: 1px solid rgba(0,0,0,0.15);
+      }
+      
+      #sub-menu {
+        position: absolute;
+        background: #182952;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.15s ease-in;
+      }
+      
+      #sub-menu > li {
+        padding: 16px 28px;
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+      }
+      
+      #sub-menu > li >  a {
+        color: rgba(255,255,255,0.6);
+        text-decoration: none;
+      }
+      
+      #main-menu > li:hover #sub-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      #sub-menu > li >  a:hover {
+       text-decoration: underline;
+      }
+      
+      section {
+        column-width: 15em;
+        background: #dadadf;
+        padding: 2em 12em;
+      }
+      #table{
+          border: 1;
+      }
+          </style>

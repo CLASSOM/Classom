@@ -8,22 +8,16 @@ var app = http.createServer(function (request, response){
 
     var url = request.url;
     if (request.url === '/' || request.url === '/mainIndex.html') {
-        url = '/../web/html/mainindex.html'; // 메인 html 페이지
+        url = '/../FrontEnd/mainindex.html'; // 메인 html 페이지
     
         response.writeHead(200);
         response.end(fs.readFileSync(__dirname + url));
     }
     else if(request.url === '/mycard.html'){
-        url = '/../web/html/mycard.html'; // 소비패턴 조사 페이지
+        url = '/../Frontend/mycard.html'; // 소비패턴 조사 페이지
         
         response.writeHead(200);
         response.end(fs.readFileSync(__dirname+url));
-    }
-    else if(request.url === '/samsung.html'){
-        url = '/../web/html/samsung.html';
-
-        response.writeHead(200);
-        response.end(fs.readFileSync(__dirname + url));
     }
 
     else if(request.url === '/submit'){ // test code

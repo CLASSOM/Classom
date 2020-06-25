@@ -42,9 +42,9 @@ var app = http.createServer(function (request, response){
                 return;
             }
             
-            find_best(post, function(ans){
+            find_best(post, function(url){
                 response.writeHead(200);
-                response.end(ans);
+                response.end(`<head><meta charset="utf-8"></head><center><a href="${url}" style={text-align:center;}>여기</a>를 눌러 확인해보세요!`);
             });            
         });
         

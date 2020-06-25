@@ -196,7 +196,7 @@ CREATE TABLE `phone` (
   `카드명` varchar(25) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `SKT` decimal(65,30) DEFAULT NULL,
   `KT` decimal(65,30) DEFAULT NULL,
-  `LG_U+` decimal(65,30) DEFAULT NULL,
+  `LG` decimal(65,30) DEFAULT NULL,
   `prev_month` decimal(65,30) DEFAULT NULL,
   `limit` decimal(65,30) DEFAULT NULL,
   PRIMARY KEY (`phone_id`)

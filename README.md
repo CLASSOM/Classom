@@ -26,19 +26,16 @@ $ git clone git@github.com:CLASSOM/Classom.git
 ```
 <br>
 
-2. nodejs를 설치한다.
+2. nodejs와 mysql을 설치한다.
 <br>
 
-3. mysql을 설치한다.
+3. CLASSOM/DB/cardDB.sql 파일을 복사하여 mysql/bin 폴더에 붙여넣는다.
 <br>
 
-4. CLASSOM/DB/cardDB.sql 파일을 복사하여 mysql/bin 폴더에 붙여넣는다.
+4. 터미널(cmd)을 켜고 mysql/bin 폴더의 경로로 들어간다.
 <br>
 
-5. 터미널(cmd)을 켜고 mysql/bin 폴더의 경로로 들어간다.
-<br>
-
-6. 데이터베이스를 생성한다.
+5. 데이터베이스를 생성한다.
 
 ```bash
 $ mysql -uroot -p[mysql 설치할 때 만든 비밀번호]
@@ -49,6 +46,9 @@ mysql> exit
 $ mysql -uroot -p cardDB < cardDB.sql
 ```
 <br>
+
+6. CLASSOM/Backend/db.js 에서 password 부분을 mysql 설치 할 때 설정한 비밀번호로 바꾼다.
+<br><br>
 
 7. CLASSOM/Backend/main.js 를 실행한다.
 
@@ -83,3 +83,26 @@ ____________
 * Frontend : 
 > - `mainIndex.html` : localhost:3000으로 접속하면 가장 먼저 나오는 페이지입니다.
 > - `mycard.html` : 내 카드 찾기를 누르면 나오는 페이지로 사용자의 소비 패턴을 조사하는데 필요한 질문 항목이 있습니다.
+
+<br><br>
+
+### `프로젝트에 기여`
+______
+
+1. Backend와 관련된 내용은 backend branch에 pull request를 보내주세요!
+<br>
+
+2. Database와 관련된 내용은 database branch에 pull request를 보내주세요!
+<br>
+
+3. Frontend와 관련된 내용은 frontend branch에 pull request를 보내주세요!
+<br>
+
+4. 코드가 복잡한 경우에는 각 기능을 구현하는 코드에 간단한 주석을 달아주세요!
+<br>
+
+5. 기여하려는 내용을 issue에 올려주세요!
+<br>
+
+6. 줄바꿈을 아끼지 말아주세요!
+<br>
